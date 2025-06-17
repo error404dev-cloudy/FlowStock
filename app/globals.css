@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark , lemonade;
+}
+
+@keyframes wiggle {
+  0% , 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+.wiggle-animation {
+  animation: wiggle 1.5s ease-in-out infinite;
+}
+
+.Toastify__toast--success {
+  background: #eaf0ea !important;
+  color: #090909 !important; 
+}
+
+
+.Toastify__toast--error {
+  background: #eaf0ea !important;
+  color: #090909 !important;
+}

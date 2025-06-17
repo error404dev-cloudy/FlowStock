@@ -1,0 +1,55 @@
+📁 .clerk
+📁 .next
+📁 app
+├── 📁 api
+│   └── 📁 category
+│       ├── 📁 upload
+│       └── route2.ts
+├── 📁 auth
+│   ├── sign-in.tsx
+│   └── sign-up.tsx
+├── 📁 category
+│   └── page.tsx
+├── 📁 components
+│   ├── CategoryModal.tsx
+│   ├── EmptyState.tsx
+│   ├── Navbar.tsx
+│   ├── ProductImage.tsx
+│   └── Wrapper.tsx
+├── 📁 new-product
+│   └── page.tsx
+├── actions.ts
+├── layout.tsx
+└── page.tsx
+
+📁 lib
+└── prisma.ts
+
+📁 prisma
+└── schema.prisma
+
+📁 public
+
+📄 .env
+📄 .gitignore
+📄 actions-ancien.txt
+📄 eslint.config.mjs
+📄 middleware.ts
+📄 next.config.ts
+📄 next-env.d.ts
+📄 notes-lola copy.txt
+📄 notes-lola.txt
+📄 orga.txt
+📄 package-lock.json
+📄 package.json
+📄 tailwind.config.ts
+📄 tsconfig.json
+
+a jour le dim. 01juin 20h:11min
+return de chez lola...
+triste avec du Adele...
+pleure + fatigue...
+besoin de ces bras par pitier...
+et de son odeur aussi...
+je veux juste elle pour la vie...
+gros calin a son doudou...
