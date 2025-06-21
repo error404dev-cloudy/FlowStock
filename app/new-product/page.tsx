@@ -150,7 +150,7 @@ const Page = () => {
                                 onChange={handleChange}
                                 name="unit"
                             >
-                                <option value="">Sélectionner l'unité</option>
+                                <option value="">Sélectionner l&apos;unité</option>
                                 <option value="g">Gramme</option>
                                 <option value="kg">Kilogramme</option>
                                 <option value="l">Litre</option>

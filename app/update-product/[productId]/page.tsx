@@ -5,12 +5,17 @@ import Wrapper from "@/app/components/Wrapper"
 import { FormDataType, Product } from "@/type"
 import { useUser } from "@clerk/nextjs"
 import { FileImage } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
-const Page = (props: any) => {
-  const { params } = props as { params: { productId: string } }
+
+
+
+const Page = () => {
+  const params = useParams<{ productId : string }>()
+  const productId = params?.productId
+
   const { user } = useUser()
   const email = user?.primaryEmailAddress?.emailAddress as string
 
