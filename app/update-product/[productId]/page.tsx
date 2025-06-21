@@ -14,7 +14,6 @@ import { toast } from "react-toastify"
 
 const Page = () => {
   const params = useParams<{ productId : string }>()
-  const productId = params?.productId
 
   const { user } = useUser()
   const email = user?.primaryEmailAddress?.emailAddress as string
