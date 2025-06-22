@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"        // modifié pour PostgreSQL (Supabase)
   url      = env("DATABASE_URL")
 }
 
@@ -29,7 +29,7 @@ model Product {
   categoryId     String
   associationId  String?
 
-  category       Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  category       Category      @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   association    Association?  @relation(fields: [associationId], references: [id])
   transactions   Transaction[]
 
@@ -43,7 +43,6 @@ model Category {
   description    String?
 
   userEmail      String?
-
 
   associationId  String?
   association    Association?  @relation(fields: [associationId], references: [id])
@@ -63,3 +62,11 @@ model Transaction {
   createdAt      DateTime      @default(now())
 }
 
+model tasks_error {
+  id          BigInt    @id @default(autoincrement())
+  task_text   String
+  status      String?   @default("Not started")
+  user_id     String
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @default(now())
+}

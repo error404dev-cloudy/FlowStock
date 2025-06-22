@@ -525,16 +525,11 @@ export async function getProductCategoryDistribution(email : string) {
     });
     console.log("Toutes catégories de l'association :", allCategories);
 
-    // 3. Filtrer sur les catégories autorisées
-    const allowedCategories = ["Fruits", "Lait", "Féculents"];
 
     // 4. Requête avec filtre + produits inclus
     const filteredCategories = await prisma.category.findMany({
       where: {
         associationId: association.id,
-        name: {
-          in: allowedCategories,
-        },
       },
       include: {
         products: {

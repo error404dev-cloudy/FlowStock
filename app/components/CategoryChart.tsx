@@ -1,16 +1,8 @@
 import { ChartData } from "@/type"
 import React, { useEffect, useState } from "react"
 import { getProductCategoryDistribution } from "../actions"
-import {
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Bar,
-  BarChart,
-  LabelList,
-  Cell
-} from "recharts"
 import EmptyState from "./EmptyState"
+import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, XAxis, YAxis } from "recharts"
 
 const CategoryChart = ({ email }: { email: string }) => {
   const [data, setData] = useState<ChartData[]>([])

@@ -34,8 +34,8 @@ const StockSummaryTable = ({ email }: { email: string }) => {
     );
 
   return (
-    <div className="w-full ml-24">
-      <ul className="steps steps-vertical border-2 border-base-200 w-full p-5 rounded-3xl">
+    <div className="w-full md:ml-24">
+      <ul className="steps steps-vertical border-2 border-base-200 w-full p-5 rounded-3xl max-w-screen-md mx-auto">
         <li className="step step-primary">
           <div>
             <span className="text-sm mr-4 font-bold">Stock normal</span>

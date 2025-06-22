@@ -1,0 +1,95 @@
+Étape 1 — Créer ta base Supabase gratuite
+Va sur https://supabase.com et crée un compte gratuit.
+
+Une fois connecté, clique sur New project.
+
+Renseigne :
+
+Nom du projet (ex: myapp-db)
+
+Mot de passe (garde-le précieusement)
+
+Région (choisis la plus proche de toi)
+
+Clique sur Create new project.
+
+Étape 2 — Récupérer les infos de connexion
+Dans ton projet Supabase, va dans Settings > Database
+
+Récupère la DATABASE URL : c’est une URL de connexion PostgreSQL, du style :
+
+bash
+Copier
+Modifier
+postgresql://user:password@host:port/dbname
+Étape 3 — Configurer Prisma
+Dans ton projet, ouvre le fichier .env (crée-le si besoin)
+
+Ajoute ta variable d’environnement :
+
+ini
+Copier
+Modifier
+DATABASE_URL="postgresql://user:password@host:port/dbname"
+Dans ton schema.prisma, assure-toi que la datasource pointe vers cette variable :
+
+prisma
+Copier
+Modifier
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+Étape 4 — Générer Prisma et migrer ta base
+Dans le terminal de ton projet, lance :
+
+bash
+Copier
+Modifier
+npx prisma generate
+Ensuite, applique tes migrations (si tu as un fichier prisma/migrations) :
+
+bash
+Copier
+Modifier
+npx prisma migrate deploy
+ou si tu es en dev et que tu veux créer la base selon ton schema :
+
+bash
+Copier
+Modifier
+npx prisma migrate dev --name init
+Étape 5 — Tester ta connexion
+Dans ton code (actions.ts ou ailleurs), utilise Prisma normalement :
+
+ts
+Copier
+Modifier
+import { prisma } from "@/lib/prisma"
+
+// Exemple simple pour récupérer des catégories
+async function getCategories() {
+  const categories = await prisma.category.findMany()
+  return categories
+}
+Résumé
+Supabase = base PostgreSQL gratuite, facile à configurer
+
+Prisma compatible avec PostgreSQL
+
+Tu changes juste DATABASE_URL dans .env pour pointer sur Supabase
+
+Tu peux garder tous tes modèles, y compris Category
+
+Pas besoin de supprimer l’import Category dans ton code
+
+Si tu veux, je peux t’aider à faire la config complète et corriger ton actions.ts pour Supabase, tu me dis !
+
+
+
+
+
+
+
+
+
