@@ -11,6 +11,7 @@ import Link from "next/link"
 import { Trash } from "lucide-react"
 import { toast } from "react-toastify"
 
+
 const Page = () => {
   const { user, isLoaded } = useUser()
   const [products, setProducts] = useState<Product[]>([])
